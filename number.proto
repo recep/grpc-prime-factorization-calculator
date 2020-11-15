@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package number ;
+
+option go_package = ".;pb";
+
+service FactorizationService {
+    rpc Separate (NumberRequest) returns (stream PrimeNumResponse);
+}
+
+message NumberRequest {
+    int32 number = 1;
+}
+
+message PrimeNumResponse {
+    int32 prime_number = 1;
+}
